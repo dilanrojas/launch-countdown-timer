@@ -18,7 +18,8 @@ const currentSeconds = $$('.current-seconds-count')
 const nextSeconds = $$('.next-seconds-count')
 
 function countdownTimer() {
-  const endDate = new Date('Sat Dec 28 2024 19:46:39')
+  const currentDate = new Date()
+  const endDate = new Date(currentDate.getTime() + 14 * 24 * 60 * 60 * 1000)
 
   function updateCounter(nextCounter, currentCounter, counter, newCount) {
     if (nextCounter[0].textContent !== newCount.toString().padStart(2, '0')) {
